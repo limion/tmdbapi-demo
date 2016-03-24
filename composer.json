@@ -1,4 +1,5 @@
 {
+    "name": "limion/tmdbapi-demo",
     "require": {
         "php": ">=5.4.0",
 	"guzzlehttp/guzzle": "*"
