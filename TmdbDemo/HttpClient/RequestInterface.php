@@ -2,10 +2,11 @@
 
 namespace TmdbDemo\HttpClient;
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * RequestInterface represents a HTTP request message.
+ * Yes, it's not PSR-7. I keep it simple.
+ * 
+ * @author vlad.holovko@gmail.com
  */
 
 interface RequestInterface 

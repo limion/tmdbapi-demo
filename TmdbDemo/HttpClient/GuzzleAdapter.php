@@ -8,10 +8,9 @@ use GuzzleHttp\Exception\TransferException as AdapterTransferException;
 use Psr\Http\Message\ResponseInterface as AdapterResponseInterface;
 use TmdbDemo\ApiException;
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Adapter for the GuzzleHttp\ClientInterface
+ * @author vlad.holovko@gmail.com
  */
 
 class GuzzleAdapter implements AdapterInterface
@@ -57,8 +56,8 @@ class GuzzleAdapter implements AdapterInterface
     }
     
     /**
-     * 
-     * @param string $method
+     * Makes actual request 
+     * @param string $method (get,post,delete)
      * @param \TmdbDemo\HttpClient\RequestInterface $request
      * @return \TmdbDemo\HttpClient\Response 
      */

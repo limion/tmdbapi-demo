@@ -6,6 +6,7 @@ use TmdbDemo\ApiException;
 
 /**
  * FakeAdapter class is used to test an adapter interface
+ * @author vlad.holovko@gmail.com
  */
 
 class FakeAdapter implements AdapterInterface

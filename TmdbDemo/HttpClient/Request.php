@@ -2,16 +2,10 @@
 
 namespace TmdbDemo\HttpClient;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Request
- *
- * @author Я
+ * Implementation of a RequestInterface
+ * 
+ * @author vlad.holovko@gmail.com
  */
 class Request implements RequestInterface
 {

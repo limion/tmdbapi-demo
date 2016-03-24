@@ -6,16 +6,12 @@ use TmdbDemo\HttpClient\AdapterInterface;
 use TmdbDemo\HttpClient\Response;
 use TmdbDemo\Setter;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of HttpClient
- *
- * @author Я
+ * HttpClient class provides an ability to communitate over HTTP protocol.
+ * It has a set of standart methods such as get,post,delete. 
+ * Actual requests are made through an AdapterInterface object. 
+ * 
+ * @author vlad.holovko@gmail.com
  */
 class HttpClient extends Setter {
     
@@ -110,6 +106,15 @@ class HttpClient extends Setter {
         return $this->send('delete', $uri, $queryParams, $headers);
     }
     
+    /**
+     * Makes a request through an adapter
+     * @param string $method 
+     * @param string $uri
+     * @param array $queryParams
+     * @param array $headers
+     * @param string $body
+     * @return type string|null
+     */
     protected function send($method, $uri,$queryParams = [], $headers = [], $body = null)
     {
         $request = $this->createRequest($uri, $method, $queryParams, $headers, $body);
