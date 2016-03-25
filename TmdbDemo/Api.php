@@ -56,7 +56,7 @@ class Api extends BaseApi implements MovieInterface, AuthenticationInterface, Co
     {
         $body = ApiFormatter::decode($body);
         $lastResponse = $this->getHttpClient()->getLastResponse();
-        if ($lastResponse && 200 != $lastResponse->getStatusCode()) {
+        if ($lastResponse && $lastResponse->getStatusCode() >= 300) {
             throw new ApiException(
                 $body['status_message'],
                 $this->getHttpClient()->getLastRequest(),
