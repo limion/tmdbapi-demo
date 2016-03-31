@@ -85,6 +85,19 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($api->getHttpClient()->getAdapter() instanceof \TmdbDemo\HttpClient\FakeAdapter);
     }
     
+    public function testReconfigAdapter()
+    {
+        $api = new Api();
+        $this->assertTrue($api->getHttpClient()->getAdapter() instanceof \TmdbDemo\HttpClient\GuzzleAdapter);
+        $adapter = new \TmdbDemo\HttpClient\FakeAdapter();
+        $api->configure([
+            'httpClientOptions'=>[
+                'adapter'=>$adapter
+            ]
+        ]);
+        $this->assertTrue($api->getHttpClient()->getAdapter() instanceof \TmdbDemo\HttpClient\FakeAdapter);
+    }
+    
     public function providerTestApiImplementsInterface()
     {
         return [

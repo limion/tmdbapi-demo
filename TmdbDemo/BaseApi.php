@@ -67,12 +67,7 @@ abstract class BaseApi  extends Setter
         }
         if (null !== $this->_httpClient && isset($config['httpClientOptions'])) {
             // reconfigure httpClient
-            $options = $config['httpClientOptions'];
-            if (isset($options['adapter'])) {
-                $this->getHttpClient()->setAdapter($options['adapter']);
-                unset($options['adapter']);
-            }
-            $this->getHttpClient()->configure($options);
+            $this->getHttpClient()->configure($config['httpClientOptions']);
         }
         $this->_baseUri = sprintf('%s://%s', ($this->_secure ? self::SECURE_SCHEMA : self::NONSECURE_SCHEMA), self::TMDB_URI);
     }
